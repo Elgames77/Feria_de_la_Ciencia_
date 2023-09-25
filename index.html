@@ -1,0 +1,150 @@
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        </head>
+
+<body bgcolor="black">
+<!-- Header -->
+        <div class="mainHeader">
+            <nav>
+                <ul data-inViewport="slideTop">
+                    <li><h2>BIO-ARM</h2></li>
+                    <li class="pages" onclick="scrollToPurpose()">Purpose</li>
+                    <li class="pages" onclick="scrollToProcess()">Process</li>
+                    <li class="pages" onclick="scrollToProduct()">Product</li>
+                    <li class="pages" onclick="scrollToContribute()">Contribute</li>
+                </ul>
+            </nav>
+            <div class="header" data-inViewport="slideLeft">
+                 <div class="main">
+  <span class="webdev">Feria de la Ciencia</span>
+  <span class="socod">innovando la tecnología</span>
+</div>
+                <p>"El brazo robotico desafía las limitaciones humanas para forjar un futuro de posibilidades ilimitadas."</p>
+                <button onclick="location.href='https://youtu.be/KzK-GprOADc'">Video Explicativo</button>
+            </div>  
+        </div>
+        <!-- Header -->
+        <hr>
+        <!-- Purpose Text Section -->
+        <div class="textSection" id="purpose">
+           <div class="main2">
+            <span class="web">Proposito</span>
+        </div>
+            <p data-inViewport="slideLeft">
+               <br> <br>
+               El principal proposito del brazo robotico es poder automatizar muchos trabajos en la industria y facilitar de esta manera la creacion y distribucion de los diferentes productos.
+                <br><br>Otra de sus principales funciones es acabar con los trabajos riesgosos ya que pueden trabajar bajo circunstancias extremas, también son muy útiles gracias a su precisión inigualable  ya que pueden realizar trabajos con una presición milimetrica lo que los hace perfectos para trabajos que necesiten grandes niveles de detalle.
+                 <br><br> Otra de sus grandes ventajas es la capacidad de respuesta con la que cuenta ya que estos brazos roboticos cuentan con una gran velocidad para realizar distintos tipos de trabajos lo que es muy importante en situaciones cuando se requiere un tiempo de respuesta rápido.
+                  <br><br> Estos brazos roboticos podrian ser un gran paso hacia el futuro ya que estos pueden ayudar en diversos campos, como el de la medicina en el que pueden llegar hasta realizar operaciones sin riesgos.
+                              </p>
+        </div>
+        <!-- Purpose Text Section -->
+        <hr>
+        <!-- Process Text Section -->
+        <div class="textSection" id="process">
+            <h2 data-inViewport="slideLeft">Principios Fisicos</h2>
+            <div class="boxes">
+                <div class="box" data-inViewport="slideLeft">
+                    <h2>-Ley de conservacion de la energia</h2>
+                    <h2>-Ley de Newton de la acción y reacción</h2>
+                     <h2>-Cinemática</h2>
+                    
+                </div>
+                <div class="box" data-inViewport="slideLeft">
+                    <h2>-Ley de conservacion del momento angular</h2>
+                    <h2>-Ley de la palanca</h2>
+ <h2>-Control de retroalimentación</h2>
+                   
+                </div>
+                <div class="box" data-inViewport="slideRight">
+                    <h2>-Dinamica de cuerpos rigidos</h2>
+                    <p></p>
+                    
+                </div>
+
+            </div>
+        </div>
+        <!-- Process Text Section -->
+        <hr>
+        <!-- Product Text Section -->
+        <div class="textSection" id="product">
+            <h2 data-inViewport="slideLeft">Nuestro Equipo</h2>
+            <div data-inViewport="slideLeft"><img src="team.png"></div>
+            <p data-inViewport="slideRight">brazo hidraulico</p>
+        </div>
+        <!-- Product Text Section -->
+        <hr>
+        <!-- Contribute Text Section --> 
+        <div class="textSection" id="contribute">
+            <h2 data-inViewport="slideLeft">Gracias</h2>
+            <p data-inViewport="slideLeft"><a href="#"></a></p>
+            <br> 
+            <p id="scrollTop" onclick="scrollToTop()" data-inViewport="slideTop">Back To Top</p>
+        </div>  
+        <!-- Contribute Text Section -->
+        <!-- Footer -->
+        <div class="textSection footer">
+            <h2 data-inViewport="slideLeft">BIO-ARM</h2>
+            <div class="links-section">
+                <ul>
+                    <h3 data-inViewport="slideLeft">Company</h3>
+                    <li data-inViewport="slideLeft"><a href="#">Our Team</a></li>
+                    <li data-inViewport="slideLeft"><a href="#">Our Journey</a></li>
+                </ul>
+                <ul>
+                    <h3 data-inViewport="slideLeft">More Info</h3>
+                    <li data-inViewport="slideLeft"><a href="#">Join Us</a></li>
+                    <li data-inViewport="slideLeft"><a href="#">Creators</a></li>
+                </ul>
+            </div>
+            <p data-inViewport="slideLeft"></p>
+        </div>
+        <!-- Footer -->
+        <!-- That's All For the content! -->
+        <script>
+            //Add Scroll 
+            function scrollToPurpose() {
+                var purpose = document.getElementById('purpose');
+                purpose.scrollIntoView();
+            }
+            function scrollToProcess() {
+                var process = document.getElementById('process');
+                process.scrollIntoView();
+            }
+            function scrollToProduct() {
+                var product = document.getElementById('product');
+                product.scrollIntoView();
+            }
+            function scrollToContribute() {
+                var contribute = document.getElementById('contribute');
+                contribute.scrollIntoView();
+            }
+
+            //Add Slide In Effect
+            const inViewport = (entries, observer) => {
+                entries.forEach(entry => {
+                    entry.target.classList.toggle("is-inViewport", entry.isIntersecting);
+                });
+            };
+
+            const Obs = new IntersectionObserver(inViewport);
+            const obsOptions = {};
+
+            //Attach observer to every [data-inViewport] element 
+            const ELs_inViewport = document.querySelectorAll('[data-inviewport]');
+            ELs_inViewport.forEach(EL => {
+                Obs.observe(EL, obsOptions);
+            });
+
+            //Scroll To Top
+            function scrollToTop() {
+                window.scrollTo(0, 0);
+            }
+        </script>
+        </body>
+</html>
